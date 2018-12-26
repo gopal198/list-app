@@ -28,6 +28,9 @@ export class AddListComponent implements OnInit, OnDestroy {
   }
   ngOnInit() {
     this.listData = JSON.parse(this.localStorage.get('listData'));
+    if(this.listData == null || this.listData == "" || this.listData == undefined){
+        this.listData = [];
+    }
     this.submitted = true;
     this.addList = this._fb.group({
       'title':['',[<any>Validators.required]],
