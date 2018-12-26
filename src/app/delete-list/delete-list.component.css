@@ -1,0 +1,7 @@
+.showEllipsis{
+    text-overflow: ellipsis;
+    height: 2em;
+    overflow: scroll;
+    white-space: nowrap;
+    border:1em solid black;
+}

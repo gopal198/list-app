@@ -1,0 +1,7 @@
+.showEllipsis{
+    text-overflow: ellipsis;
+    height: 3em;
+    overflow: hidden;
+    width:100%;
+    -webkit-line-clamp: 3;
+}

@@ -1,0 +1,26 @@
+<h4>Add Note</h4>
+<form [formGroup]="addList" novalidate>
+  <div class="form-group">
+    <label for="title">Title</label>
+    <input type="text" class="form-control" name="title" formControlName="title">
+    <small [hidden]="addList.controls.title.valid || (addList.controls.title.pristine && !submitted)" class="text-danger">
+      Required </small>
+  </div>
+  <div class="form-group">
+    <label for="text">Text</label>
+    <textarea class="form-control" rows="5" name="text" formControlName="text"></textarea>
+    <small [hidden]="addList.controls.text.valid || (addList.controls.text.pristine && !submitted)" class="text-danger">
+      Required </small>
+  </div>
+  <div class="form-group">
+    <label for="datetime">Creation Date</label>
+    <div style="width:100%">
+      <input class="form-control" placeholder="Enter From Date" [owlDateTime]="dt4" formControlName="date"
+        [owlDateTimeTrigger]="dt4">
+      <owl-date-time [pickerMode]="'dialog'" [hour12Timer]="'false'" #dt4></owl-date-time>
+      <small [hidden]="addList.controls.date.valid || (addList.controls.date.pristine && !submitted)" class="text-danger">
+        Required </small>
+    </div>
+  </div>
+  <button type="button" class="btn btn-primary" (click)="addListItem(addList.value,addList.valid)">Save</button>
+</form>
